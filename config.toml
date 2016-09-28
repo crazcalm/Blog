@@ -3,7 +3,7 @@ title = "Crazcalm"
 theme = "hugo-uno"
 publishdir = "public"
 baseurl = "http://crazcalm.github.io/blog"
-canonifyurls: true
+canonifyurls = true
 
 [param]
     author = "Marcus Willock"
