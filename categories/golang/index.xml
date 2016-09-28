@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crazcalm</title>
+    <link>http://crazcalm.github.io/blog/categories/golang/index.xml</link>
+    <description>Recent content on Crazcalm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://crazcalm.github.io/blog/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>starting_a_blog</title>
+      <link>http://crazcalm.github.io/blog/post/starting_a_blog/</link>
+      <pubDate>Tue, 09 Aug 2016 18:39:47 -0400</pubDate>
+      
+      <guid>http://crazcalm.github.io/blog/post/starting_a_blog/</guid>
+      <description>
+
+&lt;h2 id=&#34;hi&#34;&gt;Hi&lt;/h2&gt;
+
+&lt;p&gt;My name is Marcus! Nice to Meet you!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
