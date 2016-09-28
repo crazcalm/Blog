@@ -2,7 +2,7 @@ languageCode = "en-us"
 title = "Crazcalm"
 theme = "hugo-uno"
 publishdir = "public"
-baseurl = "http://crazcalm.github.io/blog"
+baseurl = "https://crazcalm.github.io/blog"
 canonifyurls = true
 
 [param]
