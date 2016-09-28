@@ -3,7 +3,7 @@
   <channel>
       <title> on Crazcalm </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://crazcalm.github.io/blog/index.xml</link>
+    <link>https://crazcalm.github.io/blog/index.xml</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>starting_a_blog</title>
-      <link>http://crazcalm.github.io/blog/post/starting_a_blog/</link>
+      <link>https://crazcalm.github.io/blog/post/starting_a_blog/</link>
       <pubDate>Tue, 09 Aug 2016 18:39:47 EDT</pubDate>
       
-      <guid>http://crazcalm.github.io/blog/post/starting_a_blog/</guid>
+      <guid>https://crazcalm.github.io/blog/post/starting_a_blog/</guid>
       <description>
 
 &lt;h2 id=&#34;hi&#34;&gt;Hi&lt;/h2&gt;
