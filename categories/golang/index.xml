@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crazcalm</title>
+      <title> on Crazcalm </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
     <link>http://crazcalm.github.io/blog/categories/golang/index.xml</link>
-    <description>Recent content on Crazcalm</description>
-    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://crazcalm.github.io/blog/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
     
     <item>
       <title>starting_a_blog</title>
       <link>http://crazcalm.github.io/blog/post/starting_a_blog/</link>
-      <pubDate>Tue, 09 Aug 2016 18:39:47 -0400</pubDate>
+      <pubDate>Tue, 09 Aug 2016 18:39:47 EDT</pubDate>
       
       <guid>http://crazcalm.github.io/blog/post/starting_a_blog/</guid>
       <description>
