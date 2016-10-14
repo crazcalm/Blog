@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Tech-rsses on Crazcalm </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://crazcalm.github.io/blog/tech/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Fri, 07 Oct 2016 19:03:20 EDT</updated>
+    
+    <item>
+      <title>learning_micro</title>
+      <link>https://crazcalm.github.io/blog/tech/learning_micro/</link>
+      <pubDate>Fri, 07 Oct 2016 19:03:20 EDT</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/tech/learning_micro/</guid>
+      <description>&lt;p&gt;#Learning Micro&lt;/p&gt;
+
+&lt;p&gt;##Why&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I have no good reason as to why someone should learn micro over some other text editor. With that being said, here are some reasons as to why I want to learn how to use this editor.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;It is written in Go.
+    I am trying to learn Go, so a text editor written in Go appeals to me.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Writing Go code in it is easy!
+    Micro has builtin features that make writting Go easier such as running go fmt after a file has been saved and showing the lines where compilation errors have occured.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;I can run it in my Terminal
+    A much have! I have a old netbook that I do a lot of programming on and that thing is not powerful enough to run a GUI application.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;It is still in development
+    I like the idea of this because it at least leaves the option of contributing to the project open.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##The Basics&lt;/p&gt;
+
+&lt;p&gt;###Command mode:
+    &lt;code&gt;Ctrl + e&lt;/code&gt;: Gets you into command mode. This mode is needed for almost everything!&lt;/p&gt;
+
+&lt;p&gt;###The Tutorial
+    While in command mode, enter &lt;code&gt;help tutorial&lt;/code&gt;. This document will give you an overview of how micro works and how to customize it.&lt;/p&gt;
+
+&lt;p&gt;###Getting to the Help Docs
+    While in command mode, enter &lt;code&gt;help&lt;/code&gt;. This is my go to document for finding more details about a micro feature.&lt;/p&gt;
+
+&lt;p&gt;###Customizing the Editor Colors
+    While in command mode, enter &lt;code&gt;help colors&lt;/code&gt;. This will bring you to a document that will instruct you on
+    how to change programming syntax colors, editor theme colors, etc.&lt;/p&gt;
+
+&lt;p&gt;##Things I am struggling with&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Keybidings
+    I have been using nano for the past 2 years, so vim and emacs keybindings are something I know nothing about.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;To see Micro&#39;s default keybindings, type ctlr + e to enter command mode and then type &amp;quot;help keybiddings&amp;quot;.
+This will result in a new horizontal window appearing with the default keybindings.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here are a list of some of the key bindings that I find useful.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Some keybinding to note:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ctrl + q = Quit&lt;/li&gt;
+&lt;li&gt;Ctrl + o = Open&lt;/li&gt;
+&lt;li&gt;Ctrl + s = Save&lt;/li&gt;
+&lt;li&gt;Ctrl + f = Find&lt;/li&gt;
+&lt;li&gt;Ctrl + n = Find next&lt;/li&gt;
+&lt;li&gt;Ctrl + p = Find previous&lt;/li&gt;
+&lt;li&gt;Ctrl + z = Undo&lt;/li&gt;
+&lt;li&gt;Ctrl + y = Redo&lt;/li&gt;
+&lt;li&gt;Ctrl + c = Copy&lt;/li&gt;
+&lt;li&gt;Ctrl + x = Cut&lt;/li&gt;
+&lt;li&gt;Ctrl + k = Cut line&lt;/li&gt;
+&lt;li&gt;Ctrl + v = Paste&lt;/li&gt;
+&lt;li&gt;Ctrl + a = Select all&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ctrl + l = Jump line&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;PageUp = Cusor moves up a full page&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;PageDown = Cursor moves down a full page&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ctrl + w = Next split&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ctrl + t = Add a Tab&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ctrl + / = Next Tab&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ctrl + b = Shell mode&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Alt + left/right = move the cursor a word in that direction&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ctrl + u = Toggle Macro (recoding keystrokes?)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ctrl + j = Play Macro (play recorded steps)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You may create a &lt;code&gt;~/.config/micro/bindings.json&lt;/code&gt; file where you can customize your keybindings.
+Examples of this can be found in the keybindings help doc (in command mode run: &lt;code&gt;help keybindings&lt;/code&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title> Golang &middot; Crazcalm </title>
+    <title> learning_micro &middot; Crazcalm </title>
     
     <link rel="stylesheet" type="text/css" href="https://crazcalm.github.io/blog/css/uno.min.css" />
     <link rel="stylesheet" type="text/css" href="https://crazcalm.github.io/blog/css/lightGallery.css" />
@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://crazcalm.github.io/blog/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="https://crazcalm.github.io/blog/favicon.ico">
     
-    <link href="https://crazcalm.github.io/blog/tags/golang/index.xml" rel="alternate" type="application/rss+xml" title="Crazcalm" />
+    <link href="" rel="alternate" type="application/rss+xml" title="Crazcalm" />
     
     <script src="https://crazcalm.github.io/blog/js/jquery.min.js"></script>
     <script src="https://crazcalm.github.io/blog/js/main.min.js">
@@ -27,9 +27,7 @@
     </span>
     <header class="
         
-        
             panel-cover panel-cover--collapsed
-        
         " >
     <div class="panel-main">
         <div class="panel-main__inner panel-inverted">
@@ -96,17 +94,100 @@
 
         <div class="content-wrapper">
             <div class="content-wrapper__inner">
-                
-                <h2>2016</h2>
-                <ul id="list">
-                    
-                    <li>
-                        <a href="https://crazcalm.github.io/blog/post/learning_micro/">Micro: My New Editor? </a>
-                        <div class="meta">Fri, Oct 7, 2016</div>
-                    </li>
-                    
-                </ul>
-                
+                <div class="post">
+                    <h1>learning_micro</h1>
+                    <span class="post-date">Fri, Oct 7, 2016</span>
+                    <p>#Learning Micro</p>
+
+<p>##Why</p>
+
+<pre><code>I have no good reason as to why someone should learn micro over some other text editor. With that being said, here are some reasons as to why I want to learn how to use this editor.
+</code></pre>
+
+<ul>
+<li><p>It is written in Go.
+    I am trying to learn Go, so a text editor written in Go appeals to me.</p></li>
+
+<li><p>Writing Go code in it is easy!
+    Micro has builtin features that make writting Go easier such as running go fmt after a file has been saved and showing the lines where compilation errors have occured.</p></li>
+
+<li><p>I can run it in my Terminal
+    A much have! I have a old netbook that I do a lot of programming on and that thing is not powerful enough to run a GUI application.</p></li>
+
+<li><p>It is still in development
+    I like the idea of this because it at least leaves the option of contributing to the project open.</p></li>
+</ul>
+
+<p>##The Basics</p>
+
+<p>###Command mode:
+    <code>Ctrl + e</code>: Gets you into command mode. This mode is needed for almost everything!</p>
+
+<p>###The Tutorial
+    While in command mode, enter <code>help tutorial</code>. This document will give you an overview of how micro works and how to customize it.</p>
+
+<p>###Getting to the Help Docs
+    While in command mode, enter <code>help</code>. This is my go to document for finding more details about a micro feature.</p>
+
+<p>###Customizing the Editor Colors
+    While in command mode, enter <code>help colors</code>. This will bring you to a document that will instruct you on
+    how to change programming syntax colors, editor theme colors, etc.</p>
+
+<p>##Things I am struggling with</p>
+
+<ul>
+<li><p>Keybidings
+    I have been using nano for the past 2 years, so vim and emacs keybindings are something I know nothing about.</p>
+
+<pre><code>To see Micro's default keybindings, type ctlr + e to enter command mode and then type &quot;help keybiddings&quot;.
+This will result in a new horizontal window appearing with the default keybindings.
+</code></pre>
+
+<p>Here are a list of some of the key bindings that I find useful.</p></li>
+
+<li><p>Some keybinding to note:</p>
+
+<ul>
+<li>Ctrl + q = Quit</li>
+<li>Ctrl + o = Open</li>
+<li>Ctrl + s = Save</li>
+<li>Ctrl + f = Find</li>
+<li>Ctrl + n = Find next</li>
+<li>Ctrl + p = Find previous</li>
+<li>Ctrl + z = Undo</li>
+<li>Ctrl + y = Redo</li>
+<li>Ctrl + c = Copy</li>
+<li>Ctrl + x = Cut</li>
+<li>Ctrl + k = Cut line</li>
+<li>Ctrl + v = Paste</li>
+<li>Ctrl + a = Select all</li>
+
+<li><p>Ctrl + l = Jump line</p></li>
+
+<li><p>PageUp = Cusor moves up a full page</p></li>
+
+<li><p>PageDown = Cursor moves down a full page</p></li>
+
+<li><p>Ctrl + w = Next split</p></li>
+
+<li><p>Ctrl + t = Add a Tab</p></li>
+
+<li><p>Ctrl + / = Next Tab</p></li>
+
+<li><p>Ctrl + b = Shell mode</p></li>
+
+<li><p>Alt + left/right = move the cursor a word in that direction</p></li>
+
+<li><p>Ctrl + u = Toggle Macro (recoding keystrokes?)</p></li>
+
+<li><p>Ctrl + j = Play Macro (play recorded steps)</p></li>
+</ul>
+
+<p>You may create a <code>~/.config/micro/bindings.json</code> file where you can customize your keybindings.
+Examples of this can be found in the keybindings help doc (in command mode run: <code>help keybindings</code>)</p></li>
+</ul>
+
+                </div>
             </div>
         </div>
     </body>
