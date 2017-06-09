@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Crazcalm</title>
+    <link>https://crazcalm.github.io/blog/tags/</link>
+    <description>Recent content in Tags on Crazcalm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Oct 2016 19:03:20 -0400</lastBuildDate>
+    
+	<atom:link href="https://crazcalm.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Development</title>
+      <link>https://crazcalm.github.io/blog/tags/development/</link>
+      <pubDate>Fri, 07 Oct 2016 19:03:20 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Editor</title>
+      <link>https://crazcalm.github.io/blog/tags/editor/</link>
+      <pubDate>Fri, 07 Oct 2016 19:03:20 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://crazcalm.github.io/blog/tags/golang/</link>
+      <pubDate>Fri, 07 Oct 2016 19:03:20 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Micro</title>
+      <link>https://crazcalm.github.io/blog/tags/micro/</link>
+      <pubDate>Fri, 07 Oct 2016 19:03:20 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/tags/micro/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
