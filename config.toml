@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "Crazcalm"
-theme = "hugo-uno"
+theme = "hugo-geo"
 publishdir = "public"
 baseurl = "https://crazcalm.github.io/blog"
 canonifyurls = true
