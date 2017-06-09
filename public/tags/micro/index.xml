@@ -1,108 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title> on Crazcalm </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://crazcalm.github.io/blog/tags/micro/index.xml</link>
+    <title>Micro on Crazcalm</title>
+    <link>https://crazcalm.github.io/blog/tags/micro/</link>
+    <description>Recent content in Micro on Crazcalm</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 07 Oct 2016 19:03:20 -0400</lastBuildDate>
     
+	<atom:link href="https://crazcalm.github.io/blog/tags/micro/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
     
     <item>
       <title>Micro: My New Editor?</title>
       <link>https://crazcalm.github.io/blog/post/learning_micro/</link>
-      <pubDate>Fri, 07 Oct 2016 19:03:20 EDT</pubDate>
+      <pubDate>Fri, 07 Oct 2016 19:03:20 -0400</pubDate>
       
       <guid>https://crazcalm.github.io/blog/post/learning_micro/</guid>
-      <description>
-
-&lt;h1 id=&#34;why-learn-micro&#34;&gt;Why Learn Micro?&lt;/h1&gt;
-
-&lt;p&gt;I have no good reason as to why someone should learn micro over some other text editor. With that being said, here are some reasons as to why I want to learn how to use this editor.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;It is written in Go.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I am trying to learn Go, so a text editor written in Go appeals to me.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Writing Go code in it is easy!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Micro has builtin features that make writting Go easier such as running go fmt after a file has been saved and showing the lines where compilation errors have occured.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;I can run it in my Terminal.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A much have! I have a old netbook that I do a lot of programming on and that thing is not powerful enough to run a GUI application.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;It is still in development.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I like the idea of this because it gives me the option of contributing to the project.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;the-basics&#34;&gt;The Basics&lt;/h1&gt;
-
-&lt;h2 id=&#34;command-mode&#34;&gt;Command mode:&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;Ctrl + e&lt;/code&gt;: Gets you into command mode. This mode is needed for almost everything!&lt;/p&gt;
-
-&lt;h2 id=&#34;the-tutorial&#34;&gt;The Tutorial&lt;/h2&gt;
-
-&lt;p&gt;While in command mode, enter &lt;code&gt;help tutorial&lt;/code&gt;. This document will give you an overview of how micro works and how to customize it.&lt;/p&gt;
-
-&lt;h2 id=&#34;getting-to-the-help-docs&#34;&gt;Getting to the Help Docs&lt;/h2&gt;
-
-&lt;p&gt;While in command mode, enter &lt;code&gt;help&lt;/code&gt;. This is my go to document for finding more details about a micro feature.&lt;/p&gt;
-
-&lt;h2 id=&#34;customizing-the-editor-colors&#34;&gt;Customizing the Editor Colors&lt;/h2&gt;
-
-&lt;p&gt;While in command mode, enter &lt;code&gt;help colors&lt;/code&gt;. This will bring you to a document that will instruct you on how to change the programming syntax colors, editor theme colors, etc.&lt;/p&gt;
-
-&lt;h2 id=&#34;keybidings&#34;&gt;Keybidings&lt;/h2&gt;
-
-&lt;p&gt;I have been using nano for the past 2 years, so vim and emacs keybindings are something I know nothing about.&lt;/p&gt;
-
-&lt;p&gt;To see Micro&amp;rsquo;s default keybindings, type ctlr + e to enter command mode and then type &amp;ldquo;help keybiddings&amp;rdquo;.
-This will result in a new horizontal window appearing with the default keybindings.&lt;/p&gt;
-
-&lt;p&gt;Here are a list of some of the key bindings that I find useful.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + q&lt;/code&gt; = Quit&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + o&lt;/code&gt; = Open&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + s&lt;/code&gt; = Save&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + f&lt;/code&gt; = Find&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + n&lt;/code&gt; = Find next&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + p&lt;/code&gt; = Find previous&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + z&lt;/code&gt; = Undo&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + y&lt;/code&gt; = Redo&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + c&lt;/code&gt; = Copy&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + x&lt;/code&gt; = Cut&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + k&lt;/code&gt; = Cut line&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + v&lt;/code&gt; = Paste&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + a&lt;/code&gt; = Select all&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + l&lt;/code&gt; = Jump line&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PageUp&lt;/code&gt; = Cusor moves up a full page&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PageDown&lt;/code&gt; = Cursor moves down a full page&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + w&lt;/code&gt; = Next split&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + t&lt;/code&gt; = Add a Tab&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + /&lt;/code&gt; = Next Tab&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + b&lt;/code&gt; = Shell mode&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Alt + left/right&lt;/code&gt; = move the cursor a word in that direction&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + u&lt;/code&gt; = Toggle Macro (recoding keystrokes?)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + j&lt;/code&gt; = Play Macro (play recorded steps)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You may create a &lt;code&gt;~/.config/micro/bindings.json&lt;/code&gt; file where you can customize your keybindings.
-Examples of this can be found in the keybindings help doc (in command mode run: &lt;code&gt;help keybindings&lt;/code&gt;)&lt;/p&gt;
-</description>
+      <description>Why Learn Micro? I have no good reason as to why someone should learn micro over some other text editor. With that being said, here are some reasons as to why I want to learn how to use this editor.
+ It is written in Go.
+ I am trying to learn Go, so a text editor written in Go appeals to me.  Writing Go code in it is easy!</description>
     </item>
     
   </channel>
