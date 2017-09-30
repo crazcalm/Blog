@@ -6,7 +6,7 @@ highlight = true
 title = "Adding a user to your server"
 description = ""
 tags = ["ubuntu", "ssh", "server"]
-draft = true
+draft = false
 
 +++
 # Why I am writing this blog?
