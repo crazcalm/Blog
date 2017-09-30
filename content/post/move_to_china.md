@@ -6,7 +6,7 @@ css = []
 highlight = true
 title = "Move to China: My Technical Difficulties"
 description = ""
-tags = []
+tags = ["china"]
 
 +++
 ## What I was prepared for:
