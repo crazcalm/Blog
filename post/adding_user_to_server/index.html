@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta property="og:title" content="Adding a user to your server">
+    
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2017-09-30">
+    
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://crazcalm.github.io/blog/post/adding_user_to_server/">
+    <meta property="og:site_name" content="Crazcalm">
+    
+    <meta property="og:tags" content="ubuntu">
+    
+    <meta property="og:tags" content="ssh">
+    
+    <meta property="og:tags" content="server">
+    
+    <meta name="generator" content="Hugo 0.18.1" />
+    <title>Adding a user to your server &middot; Crazcalm</title>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
+    
+    <link rel="stylesheet" href="https://crazcalm.github.io/blog/css/style.css">
+    
+    <link href="https://crazcalm.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="Crazcalm" />
+    
+    
+
+    
+    
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+				<a class="navbar-brand" href="https://crazcalm.github.io/blog/">Crazcalm</a>
+			
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
+	<div id="menu-content" class="vertical-align">
+		
+			<h1 class="text-center"><a href="https://crazcalm.github.io/blog/">Crazcalm</a></h1>
+		
+		
+		
+		
+		
+		<div id="social" class="text-center">
+			
+
+			
+		</div>
+		<div id="links" class="text-center">
+			
+			
+		</div>
+	</div>
+</div>
+
+		<div id="content" class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
+				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
+
+<main>
+	<header>
+		<h1>Adding a user to your server</h1>
+	</header>
+
+	<article>
+		
+
+<h1 id="why-i-am-writing-this-blog">Why I am writing this blog?</h1>
+
+<p>I am writing this blog because I a tired of forgetting how to do this. I do not add users to my server very often. As such, every time I do so, I do it incorrectly and the new user is either not in the sudoer group, the user has no home directory, or that user cannot be logged into via ssh.</p>
+
+<h1 id="requirements">Requirements:</h1>
+
+<ul>
+<li>Create a new user</li>
+<li>Set a password</li>
+<li>Have a home directory with skeleton files</li>
+<li>Be able to use sudo</li>
+<li>Can use ssh to log in</li>
+</ul>
+
+<h1 id="use-the-adduser-command">Use the &ldquo;adduser&rdquo; command</h1>
+
+<p>My linux box, running ubuntu, has two commands that can be used to created users; <code>useradd</code> and <code>adduser</code>. However, useradd is a low level interface that should never be used by the average person. Thus, we should use the high level interface that is adduser.</p>
+
+<h2 id="perks-of-adduser">Perks of adduser</h2>
+
+<p>By default, adduser command uses the <code>/etc/adduser.conf</code>, which creates a home directory for the new user, forces that user to set a password, copies skeleton files into the new directory, and some other things that I do not care too much about.</p>
+
+<p>Command: <code>adduser &lt;&lt;username&gt;&gt;</code></p>
+
+<h3 id="note">Note:</h3>
+
+<ul>
+<li><p>Skeleton files include files such as .bashrc and .profile.</p></li>
+
+<li><p>The skeleton file directory is located: /etc/skel/</p></li>
+
+<li><p>The files in that directory are copied over to the home directory of every new user that is created.</p></li>
+</ul>
+
+<h2 id="add-to-sudo-group">Add to sudo group</h2>
+
+<p>The adduser command also allows you to add users to the sudo group! The one catch is that the user must already exist. See the below command.</p>
+
+<p>Command: <code>adduser &lt;&lt;username&gt;&gt; sudo</code></p>
+
+<h2 id="login-via-ssh">Login via ssh</h2>
+
+<p>In the home directory of the new user, create a <code>.ssh</code> directory. Within that directory, create a file called <code>authorized_keys</code> and add your public ssh rsa key to that file. Once done, test logging into that user:</p>
+
+<p><code>ssh &lt;&lt;username&gt;&gt;@ip_address</code></p>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://crazcalm.github.io/blog/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  
+  <script src="https://crazcalm.github.io/blog//js/App.js"></script>
+  
+</body>
+</html>

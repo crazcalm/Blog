@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server on Crazcalm</title>
+    <link>https://crazcalm.github.io/blog/tags/server/index.xml</link>
+    <description>Recent content in Server on Crazcalm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://crazcalm.github.io/blog/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Adding a user to your server</title>
+      <link>https://crazcalm.github.io/blog/post/adding_user_to_server/</link>
+      <pubDate>Sat, 30 Sep 2017 15:30:48 +0800</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/post/adding_user_to_server/</guid>
+      <description>
+
+&lt;h1 id=&#34;why-i-am-writing-this-blog&#34;&gt;Why I am writing this blog?&lt;/h1&gt;
+
+&lt;p&gt;I am writing this blog because I a tired of forgetting how to do this. I do not add users to my server very often. As such, every time I do so, I do it incorrectly and the new user is either not in the sudoer group, the user has no home directory, or that user cannot be logged into via ssh.&lt;/p&gt;
+
+&lt;h1 id=&#34;requirements&#34;&gt;Requirements:&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create a new user&lt;/li&gt;
+&lt;li&gt;Set a password&lt;/li&gt;
+&lt;li&gt;Have a home directory with skeleton files&lt;/li&gt;
+&lt;li&gt;Be able to use sudo&lt;/li&gt;
+&lt;li&gt;Can use ssh to log in&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;use-the-adduser-command&#34;&gt;Use the &amp;ldquo;adduser&amp;rdquo; command&lt;/h1&gt;
+
+&lt;p&gt;My linux box, running ubuntu, has two commands that can be used to created users; &lt;code&gt;useradd&lt;/code&gt; and &lt;code&gt;adduser&lt;/code&gt;. However, useradd is a low level interface that should never be used by the average person. Thus, we should use the high level interface that is adduser.&lt;/p&gt;
+
+&lt;h2 id=&#34;perks-of-adduser&#34;&gt;Perks of adduser&lt;/h2&gt;
+
+&lt;p&gt;By default, adduser command uses the &lt;code&gt;/etc/adduser.conf&lt;/code&gt;, which creates a home directory for the new user, forces that user to set a password, copies skeleton files into the new directory, and some other things that I do not care too much about.&lt;/p&gt;
+
+&lt;p&gt;Command: &lt;code&gt;adduser &amp;lt;&amp;lt;username&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;note&#34;&gt;Note:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Skeleton files include files such as .bashrc and .profile.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The skeleton file directory is located: /etc/skel/&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The files in that directory are copied over to the home directory of every new user that is created.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;add-to-sudo-group&#34;&gt;Add to sudo group&lt;/h2&gt;
+
+&lt;p&gt;The adduser command also allows you to add users to the sudo group! The one catch is that the user must already exist. See the below command.&lt;/p&gt;
+
+&lt;p&gt;Command: &lt;code&gt;adduser &amp;lt;&amp;lt;username&amp;gt;&amp;gt; sudo&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;login-via-ssh&#34;&gt;Login via ssh&lt;/h2&gt;
+
+&lt;p&gt;In the home directory of the new user, create a &lt;code&gt;.ssh&lt;/code&gt; directory. Within that directory, create a file called &lt;code&gt;authorized_keys&lt;/code&gt; and add your public ssh rsa key to that file. Once done, test logging into that user:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ssh &amp;lt;&amp;lt;username&amp;gt;&amp;gt;@ip_address&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
