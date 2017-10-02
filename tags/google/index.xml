@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>China on Crazcalm</title>
-    <link>https://crazcalm.github.io/blog/tags/china/index.xml</link>
-    <description>Recent content in China on Crazcalm</description>
+    <title>Google on Crazcalm</title>
+    <link>https://crazcalm.github.io/blog/tags/google/index.xml</link>
+    <description>Recent content in Google on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://crazcalm.github.io/blog/tags/china/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://crazcalm.github.io/blog/tags/google/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Golang: Using Google&#39;s x packages in China</title>
@@ -43,36 +43,6 @@ package golang.org/x/text/width: unrecognized import path &amp;quot;golang.org/x
 
 &lt;pre&gt;&lt;code&gt;$GOPATH/src/golang.org/x/
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Move to China: My Technical Difficulties</title>
-      <link>https://crazcalm.github.io/blog/post/move_to_china/</link>
-      <pubDate>Thu, 28 Sep 2017 23:29:35 +0800</pubDate>
-      
-      <guid>https://crazcalm.github.io/blog/post/move_to_china/</guid>
-      <description>
-
-&lt;h2 id=&#34;what-i-was-prepared-for&#34;&gt;What I was prepared for:&lt;/h2&gt;
-
-&lt;p&gt;When planning a move to China, we all think of the obvious things we will lose the ability to use; All Google products, Facebook, Whats App, Twitter, Instagram, etc. I have known people who have purchased VPNs so that they could continue using those services, but I am not one of those people.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-i-did-not-expect&#34;&gt;What I did not expect:&lt;/h2&gt;
-
-&lt;h3 id=&#34;distance-issues&#34;&gt;Distance issues&lt;/h3&gt;
-
-&lt;p&gt;The biggest issue I have ran into has been the physical distance between China and the Western world. The servers of the websites and services that I use are so far away from me that they are either extremely slow or the connection times out.&lt;/p&gt;
-
-&lt;p&gt;The most annoying case I have had of this was when I was trying to inform my student loan provider that I have joined the Peace Corps by uploading a document to their site. The issue was that I could not get to that portion of their site because it kept timing out.&lt;/p&gt;
-
-&lt;h3 id=&#34;updating-apps&#34;&gt;Updating Apps&lt;/h3&gt;
-
-&lt;p&gt;Before leaving the US, I went in search of a secure messaging app that I could use while abroad. I settled upon Signal, which is an amazing app. I downloading it and made it my default messaging app.&lt;/p&gt;
-
-&lt;p&gt;After living in China for a few months, the app stopped working because my version of the app was out of date. In my mind, out of date means insecure so I understand and applaud them for disabling my old version of the Signal app.&lt;/p&gt;
-
-&lt;p&gt;However, I have no means of updating the app while in China. I cannot use the Google Play store and the Chinese app store that I am using does not have Signal. As a result, I have been forced to give up on using Signal while in China.&lt;/p&gt;
 </description>
     </item>
     
