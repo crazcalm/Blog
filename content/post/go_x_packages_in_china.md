@@ -4,7 +4,7 @@ css = []
 highlight = true
 title = "Golang: Using Google's x packages in China"
 description = ""
-tags = []
+tags = ["golang", "google", "china"]
 draft = false
 date = "2017-10-02T15:33:17+08:00"
 

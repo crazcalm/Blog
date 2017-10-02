@@ -1,9 +1,9 @@
 +++
 Tags = [
-  "Development",
-  "Golang",
-  "Editor",
-  "Micro"
+  "development",
+  "golang",
+  "editor",
+  "micro"
 ]
 Categories = [
   "Development",
