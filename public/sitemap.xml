@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crazcalm.github.io/blog/post/windows_vms/</loc>
+    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://crazcalm.github.io/blog/post/go_x_packages_in_china/</loc>
     <lastmod>2017-10-02T15:33:17+08:00</lastmod>
   </url>
@@ -34,7 +39,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/</loc>
-    <lastmod>2017-10-02T15:33:17+08:00</lastmod>
+    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,7 +99,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/post/</loc>
-    <lastmod>2017-10-02T15:33:17+08:00</lastmod>
+    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -118,6 +123,24 @@
   <url>
     <loc>https://crazcalm.github.io/blog/tags/ubuntu/</loc>
     <lastmod>2017-09-30T15:30:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazcalm.github.io/blog/tags/virtualbox/</loc>
+    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazcalm.github.io/blog/tags/vms/</loc>
+    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazcalm.github.io/blog/tags/windows/</loc>
+    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
