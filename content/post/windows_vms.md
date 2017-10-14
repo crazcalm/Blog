@@ -16,6 +16,6 @@ As a linux user, I do not have any Windows machines. However, every couple of ye
 ## Microsoft's Developer Website
 The full url is [https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/).
 
-![](/static/img/windows_vm.png)
+<image src="/img/windows_vm.png">
 
 This website will allow you to download VMs for different versions of the Windows operating systems. Personally, I have only used the virtualbox VMs, but I am sure that the other ones work just as well.
