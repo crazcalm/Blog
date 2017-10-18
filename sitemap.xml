@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crazcalm.github.io/blog/post/programming_oversights/</loc>
+    <lastmod>2017-10-18T13:44:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://crazcalm.github.io/blog/post/windows_vms/</loc>
     <lastmod>2017-10-14T13:44:05+08:00</lastmod>
   </url>
@@ -39,7 +44,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/</loc>
-    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
+    <lastmod>2017-10-18T13:44:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -68,8 +73,14 @@
   </url>
   
   <url>
+    <loc>https://crazcalm.github.io/blog/tags/frustrated/</loc>
+    <lastmod>2017-10-18T13:44:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://crazcalm.github.io/blog/tags/golang/</loc>
-    <lastmod>2017-10-02T15:33:17+08:00</lastmod>
+    <lastmod>2017-10-18T13:44:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -99,7 +110,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/post/</loc>
-    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
+    <lastmod>2017-10-18T13:44:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -117,6 +128,12 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazcalm.github.io/blog/tags/terminal/</loc>
+    <lastmod>2017-10-18T13:44:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,7 +157,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/tags/windows/</loc>
-    <lastmod>2017-10-14T13:44:05+08:00</lastmod>
+    <lastmod>2017-10-18T13:44:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
