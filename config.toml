@@ -5,5 +5,20 @@ publishdir = "public"
 baseurl = "https://crazcalm.github.io/blog/"
 canonifyurls = true
 
-[param]
-    author = "Marcus Willock"
+[params]
+	author = "Marcus Willock"
+
+	# Include favicon
+	favicon = "favicon.ico"
+
+	# Header Title for the main page
+	header = "What I'm Thinking"
+
+	# Email (optional)
+	email = "crazcalm@gmail.com"
+
+	# Social buttons for sidebar
+	# Each of these are optional
+	[[params.socialbuttons]]
+	faicon = "github"
+	url = "https://github.com/crazcalm"

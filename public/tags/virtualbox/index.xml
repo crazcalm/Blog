@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Virtualbox on Crazcalm</title>
-    <link>https://crazcalm.github.io/blog/tags/virtualbox/index.xml</link>
+    <link>https://crazcalm.github.io/blog/tags/virtualbox/</link>
     <description>Recent content in Virtualbox on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://crazcalm.github.io/blog/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2017 13:44:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://crazcalm.github.io/blog/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Free Windows VMs</title>
@@ -14,20 +17,9 @@
       <pubDate>Sat, 14 Oct 2017 13:44:05 +0800</pubDate>
       
       <guid>https://crazcalm.github.io/blog/post/windows_vms/</guid>
-      <description>
-
-&lt;h2 id=&#34;window-vm-s&#34;&gt;Window VM&amp;rsquo;s&lt;/h2&gt;
-
-&lt;p&gt;As a linux user, I do not have any Windows machines. However, every couple of years I do need the Windows operating system for either testing browser support, making sure my code runs on Windows, etc. And, even though I have downloaded Windows VMs plenty of times, I always forget which website has them. Thus, this blog.&lt;/p&gt;
-
-&lt;h2 id=&#34;microsoft-s-developer-website&#34;&gt;Microsoft&amp;rsquo;s Developer Website&lt;/h2&gt;
-
-&lt;p&gt;The full url is &lt;a href=&#34;https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/&#34;&gt;https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;image src=&#34;https://crazcalm.github.io/blog/img/windows_vm.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;This website will allow you to download VMs for different versions of the Windows operating systems. Personally, I have only used the virtualbox VMs, but I am sure that the other ones work just as well.&lt;/p&gt;
-</description>
+      <description>Window VM&amp;rsquo;s As a linux user, I do not have any Windows machines. However, every couple of years I do need the Windows operating system for either testing browser support, making sure my code runs on Windows, etc. And, even though I have downloaded Windows VMs plenty of times, I always forget which website has them. Thus, this blog.
+Microsoft&amp;rsquo;s Developer Website The full url is https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/.
+This website will allow you to download VMs for different versions of the Windows operating systems.</description>
     </item>
     
   </channel>
