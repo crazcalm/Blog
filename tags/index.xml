@@ -6,15 +6,24 @@
     <description>Recent content in Tags on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Oct 2017 15:33:17 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Oct 2017 18:39:47 -0400</lastBuildDate>
     
 	<atom:link href="https://crazcalm.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Captcha</title>
+      <link>https://crazcalm.github.io/blog/tags/captcha/</link>
+      <pubDate>Fri, 27 Oct 2017 18:39:47 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/tags/captcha/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>China</title>
       <link>https://crazcalm.github.io/blog/tags/china/</link>
-      <pubDate>Mon, 02 Oct 2017 15:33:17 +0800</pubDate>
+      <pubDate>Fri, 27 Oct 2017 18:39:47 -0400</pubDate>
       
       <guid>https://crazcalm.github.io/blog/tags/china/</guid>
       <description></description>
@@ -59,7 +68,7 @@
     <item>
       <title>Google</title>
       <link>https://crazcalm.github.io/blog/tags/google/</link>
-      <pubDate>Mon, 02 Oct 2017 15:33:17 +0800</pubDate>
+      <pubDate>Fri, 27 Oct 2017 18:39:47 -0400</pubDate>
       
       <guid>https://crazcalm.github.io/blog/tags/google/</guid>
       <description></description>
