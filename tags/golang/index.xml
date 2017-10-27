@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on Crazcalm</title>
-    <link>https://crazcalm.github.io/blog/tags/golang/index.xml</link>
+    <link>https://crazcalm.github.io/blog/tags/golang/</link>
     <description>Recent content in Golang on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://crazcalm.github.io/blog/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Oct 2017 13:44:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://crazcalm.github.io/blog/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Programming Oversight...</title>
@@ -14,42 +17,8 @@
       <pubDate>Wed, 18 Oct 2017 13:44:46 +0800</pubDate>
       
       <guid>https://crazcalm.github.io/blog/post/programming_oversights/</guid>
-      <description>
-
-&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;
-
-&lt;p&gt;I have a horrible memory. If I meet 10 people at a party, I might remember 2 of their names. Recently, I started teaching English in China, and I now have 300+ students. In the spirit of facing my memory problem head on, wrote a programmatic solution.&lt;/p&gt;
-
-&lt;h2 id=&#34;flash-cards-app&#34;&gt;Flash Cards App&lt;/h2&gt;
-
-&lt;p&gt;&lt;image src=&#34;https://crazcalm.github.io/blog/img/flashcard_app.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;I built my own flashcard app! You can find the project on Github at &lt;a href=&#34;https://github.com/crazcalm/flash-cards&#34;&gt;https://github.com/crazcalm/flash-cards&lt;/a&gt;. In summary, I used Golang to build a terminal application that reads a csv file and turns that content into flashcards.&lt;/p&gt;
-
-&lt;p&gt;After building this tool, I thought &amp;ldquo;Wow, this is great! Maybe I can do something similar to solve other classroom problems!&amp;rdquo;&lt;/p&gt;
-
-&lt;h2 id=&#34;a-repo-of-class-related-tools&#34;&gt;A Repo of Class Related Tools&lt;/h2&gt;
-
-&lt;p&gt;I then create a repo called &lt;a href=&#34;https://github.com/crazcalm/students-csv&#34;&gt;student-csv&lt;/a&gt; to house random tools that I would use in class.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I have tool that selects a random student.&lt;/li&gt;
-&lt;li&gt;I have a tool to break the class into groups.&lt;/li&gt;
-&lt;li&gt;I have a tool to take attendance.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;All these tools are awesome on my Linux box, but this school only uses Window&amp;rsquo;s 7 machines in class. For the past month, I have been telling myself that porting these apps to Windows should be easy. It is just a terminal app. How hard can it be?&lt;/p&gt;
-
-&lt;p&gt;Then I actually tried porting it last night&amp;hellip;.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-oversight&#34;&gt;The Oversight&lt;/h2&gt;
-
-&lt;p&gt;I was right, porting these apps to Windows was easy. The only thing that I had to modify were the system command calls. In each of these apps, I send to clear command to the terminal to clear the screen. On Windows, that command is slightly different.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The oversight was that the Window&amp;rsquo;s command prompt does not support utf-8&amp;hellip;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I am in China! All my students are Chinese people with Chinese names! Thus, even though all of these apps work fine, I cannot use them in class because the Window&amp;rsquo;s command prompt cannot print out Chinese Characters!&lt;/p&gt;
-</description>
+      <description>The Problem I have a horrible memory. If I meet 10 people at a party, I might remember 2 of their names. Recently, I started teaching English in China, and I now have 300+ students. In the spirit of facing my memory problem head on, wrote a programmatic solution.
+Flash Cards App I built my own flashcard app! You can find the project on Github at https://github.com/crazcalm/flash-cards. In summary, I used Golang to build a terminal application that reads a csv file and turns that content into flashcards.</description>
     </item>
     
     <item>
@@ -58,36 +27,8 @@
       <pubDate>Mon, 02 Oct 2017 15:33:17 +0800</pubDate>
       
       <guid>https://crazcalm.github.io/blog/post/go_x_packages_in_china/</guid>
-      <description>
-
-&lt;h1 id=&#34;the-issue&#34;&gt;The Issue&lt;/h1&gt;
-
-&lt;p&gt;While in China, I do not have access to Google services, websites, or platforms. In terms of being a Golang user, this is annoying because a ton of Golang projects and packages use the &lt;code&gt;x&lt;/code&gt; packages, which are a set of Golang packages that were built by Google. These packages are hosted on a Google server, so I end up seeing a lot of this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get -u github.com/justjanne/powerline-go
-
-cd /home/crazcalm/.gvm/pkgsets/go1.8.3/global/src/golang.org/x/sys; git pull --ff-only
-
-fatal: unable to access &#39;https://go.googlesource.com/sys/&#39;: Failed to connect to go.googlesource.com port 443: Connection timed out
-
-package golang.org/x/sys/unix: exit status 1
-
-package golang.org/x/text/width: unrecognized import path &amp;quot;golang.org/x/text/width&amp;quot; (https fetch: Get https://golang.org/x/text/width?go-get=1: dial tcp 216.239.37.1:443: i/o timeout)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;the-solution&#34;&gt;The Solution&lt;/h1&gt;
-
-&lt;p&gt;All of the &lt;code&gt;x&lt;/code&gt; packages can be found on github. The below links will direct you to the Golang organization page on github (filtered for Go projects):&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/golang?utf8=%E2%9C%93&amp;amp;q=&amp;amp;type=&amp;amp;language=go&#34;&gt;https://github.com/golang?utf8=%E2%9C%93&amp;amp;q=&amp;amp;type=&amp;amp;language=go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Once there, you may search for the &lt;code&gt;x&lt;/code&gt; package that you want. The README of each &lt;code&gt;x&lt;/code&gt; package will have instructions on how to manually install the package. In summary, those instructions are to clone the github repo into the following directory on your computer:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$GOPATH/src/golang.org/x/
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>The Issue While in China, I do not have access to Google services, websites, or platforms. In terms of being a Golang user, this is annoying because a ton of Golang projects and packages use the x packages, which are a set of Golang packages that were built by Google. These packages are hosted on a Google server, so I end up seeing a lot of this:
+$ go get -u github.</description>
     </item>
     
     <item>
@@ -96,94 +37,9 @@ package golang.org/x/text/width: unrecognized import path &amp;quot;golang.org/x
       <pubDate>Fri, 07 Oct 2016 19:03:20 -0400</pubDate>
       
       <guid>https://crazcalm.github.io/blog/post/learning_micro/</guid>
-      <description>
-
-&lt;h1 id=&#34;why-learn-micro&#34;&gt;Why Learn Micro?&lt;/h1&gt;
-
-&lt;p&gt;I have no good reason as to why someone should learn micro over some other text editor. With that being said, here are some reasons as to why I want to learn how to use this editor.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;It is written in Go.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I am trying to learn Go, so a text editor written in Go appeals to me.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Writing Go code in it is easy!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Micro has builtin features that make writting Go easier such as running go fmt after a file has been saved and showing the lines where compilation errors have occured.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;I can run it in my Terminal.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A much have! I have a old netbook that I do a lot of programming on and that thing is not powerful enough to run a GUI application.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;It is still in development.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I like the idea of this because it gives me the option of contributing to the project.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;the-basics&#34;&gt;The Basics&lt;/h1&gt;
-
-&lt;h2 id=&#34;command-mode&#34;&gt;Command mode:&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;Ctrl + e&lt;/code&gt;: Gets you into command mode. This mode is needed for almost everything!&lt;/p&gt;
-
-&lt;h2 id=&#34;the-tutorial&#34;&gt;The Tutorial&lt;/h2&gt;
-
-&lt;p&gt;While in command mode, enter &lt;code&gt;help tutorial&lt;/code&gt;. This document will give you an overview of how micro works and how to customize it.&lt;/p&gt;
-
-&lt;h2 id=&#34;getting-to-the-help-docs&#34;&gt;Getting to the Help Docs&lt;/h2&gt;
-
-&lt;p&gt;While in command mode, enter &lt;code&gt;help&lt;/code&gt;. This is my go to document for finding more details about a micro feature.&lt;/p&gt;
-
-&lt;h2 id=&#34;customizing-the-editor-colors&#34;&gt;Customizing the Editor Colors&lt;/h2&gt;
-
-&lt;p&gt;While in command mode, enter &lt;code&gt;help colors&lt;/code&gt;. This will bring you to a document that will instruct you on how to change the programming syntax colors, editor theme colors, etc.&lt;/p&gt;
-
-&lt;h2 id=&#34;keybidings&#34;&gt;Keybidings&lt;/h2&gt;
-
-&lt;p&gt;I have been using nano for the past 2 years, so vim and emacs keybindings are something I know nothing about.&lt;/p&gt;
-
-&lt;p&gt;To see Micro&amp;rsquo;s default keybindings, type ctlr + e to enter command mode and then type &amp;ldquo;help keybiddings&amp;rdquo;.
-This will result in a new horizontal window appearing with the default keybindings.&lt;/p&gt;
-
-&lt;p&gt;Here are a list of some of the key bindings that I find useful.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + q&lt;/code&gt; = Quit&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + o&lt;/code&gt; = Open&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + s&lt;/code&gt; = Save&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + f&lt;/code&gt; = Find&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + n&lt;/code&gt; = Find next&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + p&lt;/code&gt; = Find previous&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + z&lt;/code&gt; = Undo&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + y&lt;/code&gt; = Redo&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + c&lt;/code&gt; = Copy&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + x&lt;/code&gt; = Cut&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + k&lt;/code&gt; = Cut line&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + v&lt;/code&gt; = Paste&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + a&lt;/code&gt; = Select all&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + l&lt;/code&gt; = Jump line&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PageUp&lt;/code&gt; = Cusor moves up a full page&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;PageDown&lt;/code&gt; = Cursor moves down a full page&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + w&lt;/code&gt; = Next split&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + t&lt;/code&gt; = Add a Tab&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + /&lt;/code&gt; = Next Tab&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + b&lt;/code&gt; = Shell mode&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Alt + left/right&lt;/code&gt; = move the cursor a word in that direction&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + u&lt;/code&gt; = Toggle Macro (recoding keystrokes?)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl + j&lt;/code&gt; = Play Macro (play recorded steps)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You may create a &lt;code&gt;~/.config/micro/bindings.json&lt;/code&gt; file where you can customize your keybindings.
-Examples of this can be found in the keybindings help doc (in command mode run: &lt;code&gt;help keybindings&lt;/code&gt;)&lt;/p&gt;
-</description>
+      <description>Why Learn Micro? I have no good reason as to why someone should learn micro over some other text editor. With that being said, here are some reasons as to why I want to learn how to use this editor.
+ It is written in Go.
+ I am trying to learn Go, so a text editor written in Go appeals to me.  Writing Go code in it is easy!</description>
     </item>
     
   </channel>

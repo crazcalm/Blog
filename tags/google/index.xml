@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google on Crazcalm</title>
-    <link>https://crazcalm.github.io/blog/tags/google/index.xml</link>
+    <link>https://crazcalm.github.io/blog/tags/google/</link>
     <description>Recent content in Google on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://crazcalm.github.io/blog/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Oct 2017 15:33:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://crazcalm.github.io/blog/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Golang: Using Google&#39;s x packages in China</title>
@@ -14,36 +17,8 @@
       <pubDate>Mon, 02 Oct 2017 15:33:17 +0800</pubDate>
       
       <guid>https://crazcalm.github.io/blog/post/go_x_packages_in_china/</guid>
-      <description>
-
-&lt;h1 id=&#34;the-issue&#34;&gt;The Issue&lt;/h1&gt;
-
-&lt;p&gt;While in China, I do not have access to Google services, websites, or platforms. In terms of being a Golang user, this is annoying because a ton of Golang projects and packages use the &lt;code&gt;x&lt;/code&gt; packages, which are a set of Golang packages that were built by Google. These packages are hosted on a Google server, so I end up seeing a lot of this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get -u github.com/justjanne/powerline-go
-
-cd /home/crazcalm/.gvm/pkgsets/go1.8.3/global/src/golang.org/x/sys; git pull --ff-only
-
-fatal: unable to access &#39;https://go.googlesource.com/sys/&#39;: Failed to connect to go.googlesource.com port 443: Connection timed out
-
-package golang.org/x/sys/unix: exit status 1
-
-package golang.org/x/text/width: unrecognized import path &amp;quot;golang.org/x/text/width&amp;quot; (https fetch: Get https://golang.org/x/text/width?go-get=1: dial tcp 216.239.37.1:443: i/o timeout)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;the-solution&#34;&gt;The Solution&lt;/h1&gt;
-
-&lt;p&gt;All of the &lt;code&gt;x&lt;/code&gt; packages can be found on github. The below links will direct you to the Golang organization page on github (filtered for Go projects):&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/golang?utf8=%E2%9C%93&amp;amp;q=&amp;amp;type=&amp;amp;language=go&#34;&gt;https://github.com/golang?utf8=%E2%9C%93&amp;amp;q=&amp;amp;type=&amp;amp;language=go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Once there, you may search for the &lt;code&gt;x&lt;/code&gt; package that you want. The README of each &lt;code&gt;x&lt;/code&gt; package will have instructions on how to manually install the package. In summary, those instructions are to clone the github repo into the following directory on your computer:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$GOPATH/src/golang.org/x/
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>The Issue While in China, I do not have access to Google services, websites, or platforms. In terms of being a Golang user, this is annoying because a ton of Golang projects and packages use the x packages, which are a set of Golang packages that were built by Google. These packages are hosted on a Google server, so I end up seeing a lot of this:
+$ go get -u github.</description>
     </item>
     
   </channel>
