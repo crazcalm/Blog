@@ -6,10 +6,19 @@
     <description>Recent content in China on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Oct 2017 15:33:17 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Oct 2017 18:39:47 -0400</lastBuildDate>
     
 	<atom:link href="https://crazcalm.github.io/blog/tags/china/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Captcha FAIL!</title>
+      <link>https://crazcalm.github.io/blog/post/captcha/</link>
+      <pubDate>Fri, 27 Oct 2017 18:39:47 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/post/captcha/</guid>
+      <description>I am not a ROBOT!!! I am currently in China and I already do not have access to a lot of sites (Thanks China!). Now Google is blocking the few sites that I do have access to with their Captcha interface! I have no access to Google, so I have no way of completing the Captcha! Given that implementing a captcha is standard practice in tech, I just lost access to the rest of the Western World&amp;hellip;</description>
+    </item>
     
     <item>
       <title>Golang: Using Google&#39;s x packages in China</title>
