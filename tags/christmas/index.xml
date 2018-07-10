@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Christmas on Crazcalm</title>
+    <link>https://crazcalm.github.io/blog/tags/christmas/</link>
+    <description>Recent content in Christmas on Crazcalm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Jul 2018 00:00:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://crazcalm.github.io/blog/tags/christmas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lazy Programming Saves Christmas!</title>
+      <link>https://crazcalm.github.io/blog/post/laziness_saves_christmas/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/post/laziness_saves_christmas/</guid>
+      <description>Let&amp;rsquo;s clear the air You may be thinking? &amp;ldquo;How can you be lazy AND still build a Christmas gift?&amp;rdquo;
+I know. To truly be lazy around Christmas time is to put in as little effort as possible into buying a gift. My issue with that definition of &amp;ldquo;Lazy&amp;rdquo; is that you have to have money to buy a gift&amp;hellip;
+Paint the picture I was in China working for the Peace Corps (AKA NO SALARY!</description>
+    </item>
+    
+  </channel>
+</rss>
