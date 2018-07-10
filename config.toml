@@ -22,3 +22,7 @@ canonifyurls = true
 	[[params.socialbuttons]]
 	faicon = "github"
 	url = "https://github.com/crazcalm"
+
+	[[params.socialbuttons]]
+	faicon = "twitter"
+	url = "https://twitter.com/Crazcalm"
