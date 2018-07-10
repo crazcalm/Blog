@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="A recap of how I used lazy programming techniques to build a Christmas gift form my fiancee">
+    <meta property="og:title" content="Lazy Programming Saves Christmas!">
+    
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2018-07-09">
+    
+    <meta property="og:description" content="A recap of how I used lazy programming techniques to build a Christmas gift form my fiancee">
+    <meta property="og:url" content="https://crazcalm.github.io/blog/post/laziness_saves_christmas/">
+    <meta property="og:site_name" content="Crazcalm">
+    
+    <meta property="og:tags" content="golang">
+    
+    <meta property="og:tags" content="christmas">
+    
+    <meta property="og:tags" content="term-quiz">
+    
+    <meta name="generator" content="Hugo 0.40.1" />
+    <title>Lazy Programming Saves Christmas! &middot; Crazcalm</title>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
+    
+    <link rel="stylesheet" href="https://crazcalm.github.io/blog/css/style.css">
+    
+    <link href="https://crazcalm.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="Crazcalm" />
+    
+    
+    <link rel="icon" href="https://crazcalm.github.io/blog/favicon.ico" />
+    
+
+    
+    
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+				<a class="navbar-brand" href="https://crazcalm.github.io/blog/">Crazcalm</a>
+			
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
+	<div id="menu-content" class="vertical-align">
+		
+			<h1 class="text-center"><a href="https://crazcalm.github.io/blog/">Crazcalm</a></h1>
+		
+		
+		
+		
+		
+		<div id="social" class="text-center">
+			
+				<a href="https://github.com/crazcalm"><i class="fa fa-github fa-2x"></i></a>
+			
+
+			<a href="mailto:crazcalm@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a>
+		</div>
+		<div id="links" class="text-center">
+			
+			
+		</div>
+	</div>
+</div>
+
+		<div id="content" class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
+				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
+
+<main>
+	<header>
+		<h1>Lazy Programming Saves Christmas!</h1>
+	</header>
+
+	<article>
+		
+
+<h2 id="let-s-clear-the-air">Let&rsquo;s clear the air</h2>
+
+<p>You may be thinking? &ldquo;How can you be lazy AND still build a Christmas gift?&rdquo;</p>
+
+<p>I know. To truly be lazy around Christmas time is to put in as little effort as possible into buying a gift. My issue with that definition of &ldquo;Lazy&rdquo; is that you have to have money to buy a gift&hellip;</p>
+
+<h2 id="paint-the-picture">Paint the picture</h2>
+
+<p>I was in China working for the Peace Corps (AKA NO SALARY!) and my fiancee was in New Jersey, which is otherwise known as the land far, far away.</p>
+
+<p>In my mind, the my situation equated to something like this:</p>
+
+<h4 id="little-time-spent-together-shitty-or-no-christmas-gift-no-more-relationship">&ldquo;Little time spent together&rdquo; + &ldquo;Shitty or no Christmas gift&rdquo; = &ldquo;No more relationship&rdquo;</h4>
+
+<h2 id="back-to-the-point">Back to the point</h2>
+
+<p>To answer the original question (&ldquo;How can you be lazy and build a Christmas gift?&rdquo;)</p>
+
+<h3 id="answer-you-can-t-this-post-is-not-about-me-being-lazy-it-is-about-how-i-program-in-a-lazy-way">Answer &ndash; You can&rsquo;t. This post is not about me being lazy. It is about how I program in a lazy way&hellip;</h3>
+
+<p>So, what is the programming problem that I am trying to solve in a lazy way?</p>
+
+<h3 id="terminal-quizzes-https-github-com-crazcalm-term-quiz"><a href="https://github.com/crazcalm/term-quiz">Terminal Quizzes!</a></h3>
+
+<p>I want to create quizzes that contain questions that come in 3 forms.</p>
+
+<ol>
+<li>ABCD</li>
+<li>True or False</li>
+<li>Fill in the blank</li>
+</ol>
+
+<h4 id="so-how-do-you-write-questions-that-satisfy-these-3-forms-abcd-true-of-false-fill-in-the-blank">So, how do you write questions that satisfy these 3 forms? (ABCD, True of False, Fill in the blank)?</h4>
+
+<p>Short answer: You don&rsquo;t. That sounds hard. Lazy me does not like hard. Plus, this does not have to be perfect. If I write a quiz application that only uses one form, it&rsquo;s STILL A QUIZ APPLICATION! Now lets pick one of these forms to start on.</p>
+
+<p>ummm&hellip;.. ABCD</p>
+
+<h4 id="okay-new-question-how-do-you-write-questions-that-satisfy-a-abcd-form">Okay, new question. How do you write questions that satisfy a ABCD form?</h4>
+
+<p>Lazy me knows this! You have one question with 4 possible answers!</p>
+
+<pre><code>type Question struct {
+  Question string
+  Answers  []Answer
+}
+</code></pre>
+
+<h4 id="new-question-how-do-you-know-if-one-of-the-answers-are-correct">New question: How do you know if one of the answers are correct?</h4>
+
+<p>Mark it! As long as the question knows which answer is correct, then we can check that with the user answer.</p>
+
+<pre><code>type Answer struct {
+  Answer string
+  Correct bool
+}
+
+func (q *Question) CorrectAnswer () (*Answer, error) {
+  for _, a := range q.Answers {
+   if a.Correct {
+     return a, nil
+    }
+  }
+  return nil, errors.New(&quot;No Answer found&quot;) 
+}
+
+type UserAnswer struct {
+  Question *Question
+  Answer   *Answer
+} 
+
+func (u UserAnswer) Correct() (result bool, err error) {
+  correctAnswer, err := u.Question.CorrectAnswer()
+  if err != nil {
+    return result, err
+  }
+
+  if currectAnswer == u.Answer { //This works because they are pointers to the same answer
+    return true, nil
+  }
+  return false, nil
+}
+</code></pre>
+
+<p>(I then write the rest of the application in my downtime, but don&rsquo;t tell anyone! I am suppose to be lazy.)</p>
+
+<p><image src="https://crazcalm.github.io/blog/img/secret.jpg"></p>
+
+<p>Okay, now that lazy me has the ABCD case more or less solved. It is time to try solving one of the other cases.</p>
+
+<h2 id="cases-left">Cases left:</h2>
+
+<ul>
+<li>True or False</li>
+<li>Fill in the Blank</li>
+</ul>
+
+<p>True and False sounds similar enough to ABCD. Lets do that one!</p>
+
+<h3 id="true-or-false">True or False</h3>
+
+<p><em>Takes a look at old code snippet</em></p>
+
+<pre><code>type Answer struct {
+  Answer string
+  Correct bool
+}
+
+func (q *Question) CorrectAnswer () (*Answer, error) {
+  for _, a := range q.Answers {
+   if a.Correct {
+     return a, nil
+    }
+  }
+  return nil, errors.New(&quot;No Answer found&quot;) 
+}
+
+type UserAnswer struct {
+  Question *Question
+  Answer   *Answer
+} 
+
+func (u UserAnswer) Correct() (result bool, err error) {
+  correctAnswer, err := u.Question.CorrectAnswer()
+  if err != nil {
+    return result, err
+  }
+
+  if currectAnswer == u.Answer { //This works because they are pointers to the same answer
+    return true, nil
+  }
+  return false, nil
+}
+</code></pre>
+
+<p>I don&rsquo;t think I need to change anything&hellip; The only thing that is kind of weird is that Answer.Answer is either True or False now, but I can live with that.</p>
+
+<p>Two cases are now supported, and I do not have to change a thing!</p>
+
+<p>Final Case!</p>
+
+<h2 id="fill-in-the-blank">Fill in the Blank</h2>
+
+<p>Well&hellip; This seems different.</p>
+
+<ol>
+<li>There are no answers to select from.</li>
+<li>The user must input their own answer&hellip;</li>
+</ol>
+
+<h3 id="things-we-do-know">Things we do know:</h3>
+
+<ol>
+<li>A questions has to have an answer (If not, you cannot answer them&hellip;)</li>
+<li>Answers have to be able to be checked/compared (If not, you will never be able to tell if the user&rsquo;s answer is right or wrong.)</li>
+</ol>
+
+<h5 id="this-suggests-that-we-can-still-use-our-question-struct-though-it-will-only-have-one-answer-and-that-answer-will-be-the-correct-answer">&ndash;&gt; This suggests that we can still use our Question struct. Though it will only have one answer&hellip; And that answer will be the correct answer.</h5>
+
+<p>I guess this means that we can still use our Answer struct too.</p>
+
+<p>Q: &ldquo;How do you check an answer?&rdquo;</p>
+
+<p>The below code cannot work because the user&rsquo;s answer will never be the same pointer as the question&rsquo;s answer.</p>
+
+<pre><code>func (u UserAnswer) Correct() (result bool, err error) {
+      correctAnswer, err := u.Question.CorrectAnswer()
+      if err != nil {
+        return result, err
+      }
+
+      if currectAnswer == u.Answer { //This works because they are pointers to the same answer
+        return true, nil
+      }
+      return false, nil
+    }
+</code></pre>
+
+<h4 id="well-here-is-what-i-know">Well. Here is what I know.</h4>
+
+<ol>
+<li>The pointers cannot be the same.</li>
+<li>The only information left to compare is the Answer string.</li>
+</ol>
+
+<p>Let try this:</p>
+
+<pre><code>func (u UserAnswer) Correct() (result bool, err error) {
+      correctAnswer, err := u.Question.CorrectAnswer()
+      if err != nil {
+        return result, err
+      }
+
+      if currectAnswer == u.Answer { //This works because they are pointers to the same answer
+        return true, nil
+      }
+
+      if strings.EqualFold(currectAnswer.Answer, u.Answer.Answer) {
+        return true, nil
+      }
+      return false, nil
+    }
+</code></pre>
+
+<p>The fill in the blank case is now done!</p>
+
+<h2 id="to-summarize">To Summarize</h2>
+
+<p>We started out with the problem of &ldquo;How do you write questions that satisfy these 3 forms? (ABCD, True of False, Fill in the blank)&rdquo;?</p>
+
+<p>I did not know how to solve that problem. So, lazy me created an easier problem to solve (satisfy the ABCD form). Once I solved the easy problem, I went back and added one level of complexity to the problem (satisfy both the ABCD and True and False form). And I repeated this process until the original problem that I could not solve was solved!</p>
+
+<p>Important note: Even if I was unable to solve one of the higher levels of complexity (True and False or Fill in the Blank), my fiancee would still receive a gift!</p>
+
+<h2 id="new-equation">New Equation:</h2>
+
+<h3 id="little-time-spent-together-awesome-christmas-gift-happy-future-wife">&ldquo;Little time spent together&rdquo; + &ldquo;Awesome Christmas gift&rdquo; = &ldquo;Happy future Wife&rdquo;</h3>
+
+<p><image src="https://crazcalm.github.io/blog/img/yes.jpg"></p>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://crazcalm.github.io/blog/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  
+  <script src="https://crazcalm.github.io/blog//js/App.js"></script>
+  
+</body>
+</html>
