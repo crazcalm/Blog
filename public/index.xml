@@ -6,10 +6,20 @@
     <description>Recent content on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jul 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jul 2018 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://crazcalm.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to modify Golang&#39;s default FileServer to hide dot files</title>
+      <link>https://crazcalm.github.io/blog/post/serve-it/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/post/serve-it/</guid>
+      <description>Why? Why do such a thing I have no good reason&amp;hellip; I was poking around in the golang net/http package one night and came across triv.go. Triv.go (triv is short for trivial) is a file filled with trivial server examples.
+One of those examples was a file server. When I pointed my browser at that file server, I saw all of my dot files. At the time, I was sharing my home directory, which is filled with dot files.</description>
+    </item>
     
     <item>
       <title>Lazy Programming Saves Christmas!</title>
