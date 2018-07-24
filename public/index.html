@@ -93,6 +93,41 @@
 	<div class="panel panel-default">
 	<div class="panel-header">
 		<h3>
+			<a href="https://crazcalm.github.io/blog/post/test_panics/">How to Test Panics</a>
+			<br>
+			<small>
+				24 July 2018
+			</small>
+		</h3>
+	</div>
+	<div class="panel-body">
+		Setup Before we can test a panic, we need to have code that panics.
+package panic func willPanic() { panic(&quot;Told you I would panic&quot;) }  Testing Given that we know the code will panic, we can do the following:
+package panic import ( &quot;testing&quot; ) func TestWillPanic(t *testing.T) { defer func() { if r := recover(); r == nil { t.Errorf(&quot;The code did not panic&quot;) } }() //Call func willPanic() }  In the above, we try to recover and, if the recovery is equal to nil, we marked the test as failed.
+		
+			... <a href="https://crazcalm.github.io/blog/post/test_panics/">Read More</a>
+		
+	</div>
+	<div class="panel-footer">
+		
+		<small class="text-muted">
+			
+			
+				<a href="https://crazcalm.github.io/blog/tags/golang"><span class="label label-success">golang</span></a>
+			
+				<a href="https://crazcalm.github.io/blog/tags/testing"><span class="label label-success">testing</span></a>
+			
+				<a href="https://crazcalm.github.io/blog/tags/panic"><span class="label label-success">panic</span></a>
+			
+		</small>
+		
+	</div>
+</div>
+
+
+	<div class="panel panel-default">
+	<div class="panel-header">
+		<h3>
 			<a href="https://crazcalm.github.io/blog/post/serve-it/">How to modify Golang&#39;s default FileServer to hide dot files</a>
 			<br>
 			<small>
