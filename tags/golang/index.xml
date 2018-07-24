@@ -6,10 +6,21 @@
     <description>Recent content in Golang on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Jul 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://crazcalm.github.io/blog/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to Test Panics</title>
+      <link>https://crazcalm.github.io/blog/post/test_panics/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/post/test_panics/</guid>
+      <description>Setup Before we can test a panic, we need to have code that panics.
+package panic func willPanic() { panic(&amp;quot;Told you I would panic&amp;quot;) }  Testing Given that we know the code will panic, we can do the following:
+package panic import ( &amp;quot;testing&amp;quot; ) func TestWillPanic(t *testing.T) { defer func() { if r := recover(); r == nil { t.Errorf(&amp;quot;The code did not panic&amp;quot;) } }() //Call func willPanic() }  In the above, we try to recover and, if the recovery is equal to nil, we marked the test as failed.</description>
+    </item>
     
     <item>
       <title>How to modify Golang&#39;s default FileServer to hide dot files</title>
