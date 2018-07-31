@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://crazcalm.github.io/blog/post/test_osgetenv/</loc>
+    <lastmod>2018-07-31T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://crazcalm.github.io/blog/post/test_panics/</loc>
     <lastmod>2018-07-24T00:00:00+00:00</lastmod>
   </url>
@@ -77,13 +82,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/</loc>
-    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazcalm.github.io/blog/tags/development/</loc>
-    <lastmod>2016-10-07T19:03:20-04:00</lastmod>
+    <lastmod>2018-07-31T00:00:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,13 +93,19 @@
   </url>
   
   <url>
-    <loc>https://crazcalm.github.io/blog/tags/editor/</loc>
+    <loc>https://crazcalm.github.io/blog/tags/development/</loc>
     <lastmod>2016-10-07T19:03:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://crazcalm.github.io/blog/categories/editor/</loc>
+    <lastmod>2016-10-07T19:03:20-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazcalm.github.io/blog/tags/editor/</loc>
     <lastmod>2016-10-07T19:03:20-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -118,14 +123,14 @@
   </url>
   
   <url>
-    <loc>https://crazcalm.github.io/blog/tags/golang/</loc>
-    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
+    <loc>https://crazcalm.github.io/blog/categories/golang/</loc>
+    <lastmod>2016-10-07T19:03:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://crazcalm.github.io/blog/categories/golang/</loc>
-    <lastmod>2016-10-07T19:03:20-04:00</lastmod>
+    <loc>https://crazcalm.github.io/blog/tags/golang/</loc>
+    <lastmod>2018-07-31T00:00:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -136,13 +141,13 @@
   </url>
   
   <url>
-    <loc>https://crazcalm.github.io/blog/tags/micro/</loc>
+    <loc>https://crazcalm.github.io/blog/categories/micro/</loc>
     <lastmod>2016-10-07T19:03:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://crazcalm.github.io/blog/categories/micro/</loc>
+    <loc>https://crazcalm.github.io/blog/tags/micro/</loc>
     <lastmod>2016-10-07T19:03:20-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -155,7 +160,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/post/</loc>
-    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-31T00:00:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -197,7 +202,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/tags/testing/</loc>
-    <lastmod>2018-07-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-31T00:00:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
