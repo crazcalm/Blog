@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta property="og:title" content="How to Test Environment Variables">
+    
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2018-07-31">
+    
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://crazcalm.github.io/blog/post/test_osgetenv/">
+    <meta property="og:site_name" content="Crazcalm">
+    
+    <meta property="og:tags" content="golang">
+    
+    <meta property="og:tags" content="testing">
+    
+    <meta name="generator" content="Hugo 0.40.1" />
+    <title>How to Test Environment Variables &middot; Crazcalm</title>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
+    
+    <link rel="stylesheet" href="https://crazcalm.github.io/blog/css/style.css">
+    
+    <link href="https://crazcalm.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="Crazcalm" />
+    
+    
+    <link rel="icon" href="https://crazcalm.github.io/blog/favicon.ico" />
+    
+
+    
+    
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+				<a class="navbar-brand" href="https://crazcalm.github.io/blog/">Crazcalm</a>
+			
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
+	<div id="menu-content" class="vertical-align">
+		
+			<h1 class="text-center"><a href="https://crazcalm.github.io/blog/">Crazcalm</a></h1>
+		
+		
+		
+		
+		
+		<div id="social" class="text-center">
+			
+				<a href="https://github.com/crazcalm"><i class="fa fa-github fa-2x"></i></a>
+			
+				<a href="https://twitter.com/Crazcalm"><i class="fa fa-twitter fa-2x"></i></a>
+			
+
+			<a href="mailto:crazcalm@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a>
+		</div>
+		<div id="links" class="text-center">
+			
+			
+		</div>
+	</div>
+</div>
+
+		<div id="content" class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
+				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
+
+<main>
+	<header>
+		<h1>How to Test Environment Variables</h1>
+	</header>
+
+	<article>
+		
+
+<h2 id="background">Background</h2>
+
+<p>I recently came across a piece of code that checks for the existence of an environment variable. If the environmental variable exists, the code will use the value of that variable. If it does not exist, the code will return a default value.</p>
+
+<p>Equivalently, this function could of set the environmental value to it&rsquo;s default value and then returned the value of the environmental variable.</p>
+
+<pre><code>func envValue(env, defaultValue string) (result string, err error) {
+    result = os.Getenv(env)
+    if strings.EqualFold(result, &quot;&quot;) {
+        err = os.Setenv(env, defaultValue)
+        if err != nil {
+            return
+        }
+        result = os.Getenv(env)
+    }
+    return
+}
+</code></pre>
+
+<p>Code like this is fairly common (especially when your code needs to write documents to a specific location).</p>
+
+<h2 id="how-do-you-test-that">How do you test that?</h2>
+
+<p>In order to create a test for this, you want to make sure that you cover both cases, which are when the environmental variable does and does not have a value set.</p>
+
+<h3 id="the-implicit-way">The Implicit Way</h3>
+
+<p>To implicitly test this example, you can note what state your machine has before writing your test. That is, does your machine have this variable set? If so, you can use your machine&rsquo;s state to test the case where the environmental variable has a value and then
+set the environmental variable to the empty string to test the case where the environmental variable does not exist.</p>
+
+<p>On my machine, the environmental variable NAME does not exist.
+ Here is an example of how to implicitly test envValue using NAME:</p>
+
+<pre><code>func TestEnvValueImplicit(t *testing.T) {
+    tests := []struct {
+        Key     string
+        Default string
+        Answer  string
+    }{
+        {&quot;NAME&quot;, &quot;default1&quot;, &quot;default1&quot;},
+        {&quot;NAME&quot;, &quot;default2&quot;, &quot;default1&quot;},
+    }
+
+    for i, test := range tests {
+        result, err := envValue(test.Key, test.Default)
+        if err != nil {
+            t.Errorf(&quot;envValue returned an err: %s&quot;, err.Error())
+        }
+
+        if !strings.EqualFold(result, test.Answer) {
+            t.Errorf(&quot;Case (%d): Expected %s to be equal to %s, but got %s&quot;, i, test.Key, test.Answer, result)
+        }
+    }
+} 
+</code></pre>
+
+<p>During the first test case, since NAME did not exist, NAME got set to the test.Default value that was passed into the function, which was &ldquo;default1&rdquo;.</p>
+
+<p>During the second test case, NAME does exist and does not get set to the test.Default value, which was &ldquo;default2&rdquo;. Instead, the value of NAME is &ldquo;default1&rdquo;, which was set during the first test case.</p>
+
+<p>In summary, we have leveraged the state of our machine to test the needed cases for this function.</p>
+
+<h4 id="drawbacks">Drawbacks</h4>
+
+<p>Given that the implicit way of testing this function utilizes the state of our machine in the test. If follows that a machine with a different initial state may get differing results.</p>
+
+<p>For example: If someone else were to run this test, and they had the environmental variable NAME set to a value other than the empty string, then the test would not cover the &ldquo;NAME does not exist&rdquo; test case because, unlike my machine, the environmental variable NAME does exist on their machine.</p>
+
+<h3 id="the-explicit-way">The Explicit Way</h3>
+
+<p>To avoid the drawbacks that come with implicitly testing this function, I would suggest that you explicitly test this function by setting NAME to the needed value before passing it into the function you want to test.</p>
+
+<pre><code>func TestEnvValueExplicit(t *testing.T) {
+    tests := []struct {
+        Key     string
+        Value   string
+        Default string
+        Answer  string
+    }{
+        {&quot;NAME&quot;, &quot;&quot;, &quot;default1&quot;, &quot;default1&quot;},
+        {&quot;NAME&quot;, &quot;default1&quot;, &quot;default2&quot;, &quot;default1&quot;},
+    }
+
+    for i, test := range tests {
+        //Need to keep original value so that I can clean up after the test
+        oldValue := os.Getenv(test.Key)
+
+        //Ensuring that the environmental variable exists
+        err := os.Setenv(test.Key, test.Value)
+        if err != nil {
+            t.Fatalf(&quot;Failed to set environment variable: %s&quot;, err.Error())
+        }
+
+        result, err := envValue(test.Key, test.Default)
+        if err != nil {
+            t.Errorf(&quot;Case (%d): envValue returned an err: %s&quot;, i, err.Error())
+        }
+
+        if !strings.EqualFold(result, test.Answer) {
+            t.Errorf(&quot;Case (%d): Expected %s to be equal to %s, but got %s&quot;, i, test.Key, test.Answer, result)
+        }
+
+        err = os.Setenv(test.Key, oldValue)
+        if err != nil {
+            t.Logf(&quot;Case (%d): Failed to set environment variable back to %s: %s&quot;, i, oldValue, err.Error())
+        }
+    }
+}
+</code></pre>
+
+<p>In the above code, we set NAME to the empty string to test that &ldquo;NAME does not exist&rdquo; case, and we set NAME to &ldquo;default1&rdquo; to test the &ldquo;NAME does exist case&rdquo;. By explicitly setting NAME during each test case, the test no longer relies on the state of the machine. As a result, this test will work the same on machines that have and do not have the NAME variable set.</p>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://crazcalm.github.io/blog/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  
+  <script src="https://crazcalm.github.io/blog//js/App.js"></script>
+  
+</body>
+</html>
