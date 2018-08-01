@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta property="og:title" content="Using Embedding to Create a Custom File Server">
+    
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2018-08-01">
+    
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://crazcalm.github.io/blog/post/custom_file_server/">
+    <meta property="og:site_name" content="Crazcalm">
+    
+    <meta property="og:tags" content="golang">
+    
+    <meta property="og:tags" content="file server">
+    
+    <meta name="generator" content="Hugo 0.40.1" />
+    <title>Using Embedding to Create a Custom File Server &middot; Crazcalm</title>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
+    
+    <link rel="stylesheet" href="https://crazcalm.github.io/blog/css/style.css">
+    
+    <link href="https://crazcalm.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="Crazcalm" />
+    
+    
+    <link rel="icon" href="https://crazcalm.github.io/blog/favicon.ico" />
+    
+
+    
+    
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+				<a class="navbar-brand" href="https://crazcalm.github.io/blog/">Crazcalm</a>
+			
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
+	<div id="menu-content" class="vertical-align">
+		
+			<h1 class="text-center"><a href="https://crazcalm.github.io/blog/">Crazcalm</a></h1>
+		
+		
+		
+		
+		
+		<div id="social" class="text-center">
+			
+				<a href="https://github.com/crazcalm"><i class="fa fa-github fa-2x"></i></a>
+			
+				<a href="https://twitter.com/Crazcalm"><i class="fa fa-twitter fa-2x"></i></a>
+			
+
+			<a href="mailto:crazcalm@gmail.com"><i class="fa fa-envelope-o fa-2x"></i></a>
+		</div>
+		<div id="links" class="text-center">
+			
+			
+		</div>
+	</div>
+</div>
+
+		<div id="content" class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
+				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
+
+<main>
+	<header>
+		<h1>Using Embedding to Create a Custom File Server</h1>
+	</header>
+
+	<article>
+		
+
+<h2 id="what-is-embedding">What is Embedding?</h2>
+
+<p>The <a href="https://www.youtube.com/watch?time_continue=1&amp;v=-LzYjMzfGDQ">talk given by Sean Kelly on Embedding</a> is the best resource I have found for explaining it.</p>
+
+<p>In summary, Embedding, in golang, is the rules governing the ability to place one struct or interface within another struct or interface and, from the outer struct or interface, call the exported fields of the inner struct or interface.</p>
+
+<h2 id="in-terms-of-creating-a-custom-file-server-why-is-this-important">In terms of creating a custom file server, why is this important?</h2>
+
+<p>In order to create a custom file server we must implement the http.FileSystem:</p>
+
+<pre><code>package http // import &quot;net/http&quot;
+
+type FileSystem interface {
+        Open(name string) (File, error)
+}
+    A FileSystem implements access to a collection of named files. The elements
+    in a file path are separated by slash ('/', U+002F) characters, regardless
+    of host operating system convention.
+</code></pre>
+
+<p>The easiest way to do this is to take the wanted interface and embed it in our own struct. Then we take an existing struct that implement this interfaces and pass it into our struct on creation. This will allow our struct to call the exported fields of the passed in struct that satisfies our embedded interface.</p>
+
+<p>For example:</p>
+
+<pre><code>package main
+
+import (
+        &quot;log&quot;
+        &quot;net/http&quot;
+        &quot;os&quot;
+)
+
+type myFileSystem struct {
+        http.FileSystem
+}
+
+func main() {
+        home := os.Getenv(&quot;HOME&quot;)
+        customFileSystem := myFileSystem{http.Dir(home)}
+        http.Handle(&quot;/&quot;, http.FileServer(customFileSystem))
+        log.Fatal(http.ListenAndServe(&quot;:12346&quot;, nil))
+}
+</code></pre>
+
+<p>The above code, creates a file server using our custom FileSystem. As specified in the interface, a FileSystem has one method called Open.</p>
+
+<p>As of right now, myFileSystem does not have a method called Open. However, myFileSystem&rsquo;s embedded interface does have a method called Open and the struct we passed in (http.Dir) has a method called Open. Since myFileSystem does not have a method called Open and the embedded interface/struct does, the embedded method Open gets promoted up to myFileSystem, which means that myFileSystem.Open uses http.Dir.Open when called.</p>
+
+<h2 id="how-to-deny-access-to-dot-files">How to deny access to dot files</h2>
+
+<p>The signature for http.Dir is:</p>
+
+<pre><code>func (d Dir) Open(name string) (File, error)
+</code></pre>
+
+<p>The method Open takes in the name of a file (or directory) and returns the *os.File of that file (or directory).</p>
+
+<p>If we want to deny access to dot files, we can do the following:</p>
+
+<pre><code>package main
+
+import (
+        &quot;log&quot;
+        &quot;net/http&quot;
+        &quot;os&quot;
+        &quot;strings&quot;
+)
+
+//isDotFile -- checks to see if name is a dot file or in a dot directory
+func isDotFile(name string) (result bool) {
+        parts := strings.Split(name, &quot;/&quot;)
+        for _, part := range parts {
+                if strings.HasPrefix(part, &quot;.&quot;) {
+                        result = true
+                        return
+                }
+        }
+        return
+}
+
+type myFileSystem struct {
+        http.FileSystem
+}
+
+func (fs myFileSystem) Open(name string) (http.File, error) {
+        file, err := fs.FileSystem.Open(name)
+
+        if isDotFile(name) { //If dot file, return 403 response
+                return file, os.ErrPermission
+        }
+        return file, err
+}
+
+func main() {
+        home := os.Getenv(&quot;HOME&quot;)
+        customFileSystem := myFileSystem{http.Dir(home)}
+        http.Handle(&quot;/&quot;, http.FileServer(customFileSystem))
+        log.Fatal(http.ListenAndServe(&quot;:12346&quot;, nil))
+}
+</code></pre>
+
+<p>Now that myFileSystem has its own Open method, the embedded interface/struct&rsquo;s method Open cannot be promoted because that would cause ambiguity (essentially, we would not know which Open method we were calling).</p>
+
+<p>In our Open method, we have called the Open method attached to the embedded interface/struct by using the name of the embedded interface/struct:</p>
+
+<pre><code>file, err := fs.FileSystem.Open(name)
+</code></pre>
+
+<p>We do this so that we can use http.Dir&rsquo;s Open method, which we know already satisfies the http.FileSystem interface.</p>
+
+<p>We then pass name into a function called isDotFile, which iterates  over the file name (the path to the file), and returns true if the file is, or is within, a dot file.</p>
+
+<p>If isDotFile returns true, we then return an os.ErrPermission error, which will show the user &ldquo;403 Forbidden&rdquo; page.</p>
+
+<p>If isDotFile returns false, then myFileSystem.Open works just like it did before.</p>
+
+<h2 id="how-to-hide-dot-files">How to hide dot files</h2>
+
+<p>So far, we have denied access to dot files, but we can still see them. In order to hide the dot files so that they do not appear on the page, we must use the same trick we used to create a custom http.FileSystem to create a custom http.File.</p>
+
+<pre><code>type myFile struct {
+    http.File
+}
+
+func (f myFile) Readdir(n int) (wantedFiles []os.FileInfo, err error) {
+    files, err := f.File.Readdir(n)
+    for _, file := range files { // Filters out the dot files
+        if !strings.HasPrefix(file.Name(), &quot;.&quot;) {
+            wantedFiles = append(wantedFiles, file)
+        }
+    }
+    return
+}
+</code></pre>
+
+<p>We have embedded httpFile into our struct (called myFile) and created a Readdir method for it.</p>
+
+<p>We created the Readdir method because the file server uses http.File.Readdir to obtain the contents of a directory. Dot files are typically included in these contents, but, in creating our own Readdir method, we can filter that content to exclude dot files. Thus, our Readdir method calls the embedded interface/structs Readdir method, filters their results to only include the content that we want and then returns the filtered content.</p>
+
+<p>The finished program looks like this:</p>
+
+<pre><code>package main
+
+import (
+        &quot;log&quot;
+        &quot;net/http&quot;
+        &quot;os&quot;
+        &quot;strings&quot;
+)
+
+//isDotFile -- checks to see if name is a dot file or in a dot directory
+func isDotFile(name string) (result bool) {
+        parts := strings.Split(name, &quot;/&quot;)
+        for _, part := range parts {
+                if strings.HasPrefix(part, &quot;.&quot;) {
+                        result = true
+                        return
+                }
+        }
+        return
+}
+
+type myFile struct {
+        http.File
+}
+
+func (f myFile) Readdir(n int) (wantedFiles []os.FileInfo, err error) {
+        files, err := f.File.Readdir(n)
+        for _, file := range files { // Filters out the dot files
+                if !strings.HasPrefix(file.Name(), &quot;.&quot;) {
+                        wantedFiles = append(wantedFiles, file)
+                }
+        }
+        return
+}
+
+type myFileSystem struct {
+        http.FileSystem
+}
+
+func (fs myFileSystem) Open(name string) (http.File, error) {
+        file, err := fs.FileSystem.Open(name)
+
+        if isDotFile(name) { //If dot file, return 403 response
+                return file, os.ErrPermission
+        }
+        return myFile{file}, err
+}
+
+func main() {
+        home := os.Getenv(&quot;HOME&quot;)
+        customFileSystem := myFileSystem{http.Dir(home)}
+        http.Handle(&quot;/&quot;, http.FileServer(customFileSystem))
+        log.Fatal(http.ListenAndServe(&quot;:12346&quot;, nil))
+}
+</code></pre>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://crazcalm.github.io/blog/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  
+  <script src="https://crazcalm.github.io/blog//js/App.js"></script>
+  
+</body>
+</html>
