@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Jul 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://crazcalm.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using Embedding to Create a Custom File Server</title>
+      <link>https://crazcalm.github.io/blog/post/custom_file_server/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/post/custom_file_server/</guid>
+      <description>What is Embedding? The talk given by Sean Kelly on Embedding is the best resource I have found for explaining it.
+In summary, Embedding, in golang, is the rules governing the ability to place one struct or interface within another struct or interface and, from the outer struct or interface, call the exported fields of the inner struct or interface.
+In terms of creating a custom file server, why is this important?</description>
+    </item>
     
     <item>
       <title>How to Test Environment Variables</title>
