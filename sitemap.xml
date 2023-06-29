@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://crazcalm.github.io/blog/post/does-this-still-work/</loc>
+    <lastmod>2023-06-29T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://crazcalm.github.io/blog/post/custom_file_server/</loc>
     <lastmod>2018-08-01T00:00:00-04:00</lastmod>
   </url>
@@ -87,7 +92,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/</loc>
-    <lastmod>2018-08-01T00:00:00-04:00</lastmod>
+    <lastmod>2023-06-29T00:00:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -165,7 +170,7 @@
   
   <url>
     <loc>https://crazcalm.github.io/blog/post/</loc>
-    <lastmod>2018-08-01T00:00:00-04:00</lastmod>
+    <lastmod>2023-06-29T00:00:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
