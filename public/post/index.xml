@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Crazcalm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Aug 2018 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://crazcalm.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Does this still work?</title>
+      <link>https://crazcalm.github.io/blog/post/does-this-still-work/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 -0400</pubDate>
+      
+      <guid>https://crazcalm.github.io/blog/post/does-this-still-work/</guid>
+      <description>I having been thinking about blogging again, but I couldn&amp;rsquo;t get over my axiety of starting over. After weeks of thinking about it and doing nothing, I decided to try to get my github.io page working. I mean, the site has been up for nearly a decade, but I have not touched it in 5 years, which means I have not built it in 5 years.
+Hugo has changed. The current version of Hugo cannot build this blog, but, if you scroll through the hugo releases long enough, you can find binaries from 2018 (v0.</description>
+    </item>
     
     <item>
       <title>Using Embedding to Create a Custom File Server</title>
